@@ -67,6 +67,26 @@ public class Board {
     }
 
     /**
+     * Remove a piece from is position
+     * @param position
+     * @return
+     */
+    public Piece removePiece(Position position) {
+        if (!positionExists(position)) {
+            throw new BoardException("There is already a piece on position: " + position);
+        }
+
+        if (piece(position) == null) {
+            return null;
+        } else {
+            Piece aux = piece(position);
+            aux.position = null;
+            pieces[position.getRow()][position.getColumn()] = null;
+            return aux;
+        }
+    }
+
+    /**
      * Verify if the position exists or not regarding is location on the matrix
      *
      * @param position

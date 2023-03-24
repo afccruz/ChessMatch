@@ -15,4 +15,10 @@ public class ChessPiece extends Piece {
     public Color getColor() {
         return color;
     }
+
+    @Override
+    public String toString() {
+        return "Position: [" + position.getRow() + ", " + position.getColumn() + "]" +
+                " Color:" + color;
+    }
 }
