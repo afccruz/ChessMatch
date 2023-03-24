@@ -1,6 +1,10 @@
 import chess.ChessPiece;
 
 public class UI {
+    /**
+     * Prints the board
+     * @param pieces
+     */
     public static void printBoard(ChessPiece[][] pieces) {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
@@ -12,6 +16,10 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
+    /**
+     * Verify if the piece exists or print an free space
+     * @param piece
+     */
     private static void printPiece(ChessPiece piece) {
         if (piece == null) {
             System.out.print("-");
