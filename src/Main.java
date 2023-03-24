@@ -19,11 +19,17 @@ public class Main {
                 System.out.println();
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
+
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
+
                 System.out.print("Target: ");
                 ChessPosition target = UI.readChessPosition(sc);
+                UI.clearScreen();
+                chessMatch.getPieces();
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-                System.out.println("Captured Piece: " + capturedPiece);
+//                System.out.println("Captured Piece: " + capturedPiece);
             } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
