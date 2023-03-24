@@ -26,14 +26,18 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+    /**
+     * Read input chess position
+     * @param sc
+     * @return
+     */
     public static ChessPosition readChessPosition(Scanner sc) {
         try {
             String pos = sc.nextLine();
             char column = pos.charAt(0);
             int row = Integer.parseInt(pos.substring(1));
             return new ChessPosition(column, row);
-        }
-        catch (RuntimeException e) {
+        } catch (RuntimeException e) {
             throw new InputMismatchException(e.getMessage());
         }
     }
@@ -70,5 +74,13 @@ public class UI {
             }
         }
         System.out.print(" ");
+    }
+
+    /**
+     * Clear console screen
+     */
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
