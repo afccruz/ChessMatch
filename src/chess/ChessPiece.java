@@ -22,13 +22,13 @@ public abstract class ChessPiece extends Piece {
         return "Position: [" + position.getRow() + ", " + position.getColumn() + "]" + " Color:" + color;
     }
 
-    protected boolean isThereOpponentPiece(Position position){
+    protected boolean isThereOpponentPiece(Position position) {
         ChessPiece p = (ChessPiece) getBoard().piece(position);
 
         return p != null && p.getColor() != color;
     }
 
-    public ChessPosition getChessPosition(){
+    public ChessPosition getChessPosition() {
         return ChessPosition.fromPosition(position);
     }
 }

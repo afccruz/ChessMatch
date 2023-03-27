@@ -33,6 +33,7 @@ public class ChessPosition {
 
     /**
      * Converts the matrix level position to the human-readable position
+     *
      * @param position
      * @return
      */

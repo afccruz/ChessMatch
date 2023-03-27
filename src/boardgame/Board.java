@@ -68,6 +68,7 @@ public class Board {
 
     /**
      * Remove a piece from is position
+     *
      * @param position
      * @return
      */
